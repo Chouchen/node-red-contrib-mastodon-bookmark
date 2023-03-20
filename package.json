@@ -1,0 +1,38 @@
+{
+  "name": "@shikiryu/node-red-contrib-mastodon-bookmark",
+  "version": "1.0.0",
+  "description": "NodeRED to retrieve Bookmark from Mastodon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predev": "npm i -g",
+    "dev": "node-red -v"
+  },
+  "author": "Clément Desmidt",
+  "contributors": [
+    "Clément Desmidt <projets@shiki.fr>"
+  ],
+  "keywords": [
+    "node-red",
+    "contrib-mastodon",
+    "mastodon"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chouchen/node-red-contrib-mastodon-bookmark.git"
+  },
+  "dependencies": {
+    "masto": "^5.10"
+  },
+  "node-red": {
+    "nodes": {
+      "mastodon-bookmark-client": "mastodon-bookmark-client.js",
+      "mastodon-bookmark": "mastodon-bookmark.js"
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/Chouchen/node-red-contrib-mastodon-bookmark/issues"
+  },
+  "homepage": "https://github.com/Chouchen/node-red-contrib-mastodon-bookmark#readme"
+}

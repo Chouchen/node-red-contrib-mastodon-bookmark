@@ -1,0 +1,46 @@
+
+<script type="text/x-red" data-template-name="mastodon-bookmark">
+
+   <div class="form-row">
+        <label for="node-input-creds"> Credentials</label>
+        <input type="text" id="node-input-creds">
+    </div>
+    
+    <!-- By convention, most nodes have a 'name' property. The following div -->
+    <!-- provides the necessary field. Should always be the last option      -->
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name of this Event">
+    </div>
+    
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="mastodon-bookmark">
+
+    <h3>About</h3>
+    <p>List last bookmarks by the authenticating user.</p>
+
+    <h3>Use</h3>
+    <p>Add User credentials and inject.</p>
+</script>
+
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+<script type="text/javascript">
+    RED.nodes.registerType('mastodon-bookmark', {
+        category: 'social',
+        defaults: {
+            name: {value:""},
+            creds: {value:"", type:"mastodon-bookmark-client"}
+        },
+        inputs:1,               // set the number of inputs - only 0 or 1
+        outputs:1,              // set the number of outputs - 0 to n
+        icon: "masto.png",     // saved in  icons/myicon.png
+        color: "#C0DEED", 
+        label: function() {
+            return this.name || "Mastodon Bookmark";
+        }        
+    });
+</script>
